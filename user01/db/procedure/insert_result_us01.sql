@@ -1,3 +1,5 @@
+PROMPT ** Create procedure INSERT_RESULT_US01 **
+
 create or replace PROCEDURE INSERT_RESULT_US01 (ip_count in number) AS 
   pragma autonomous_transaction;
   v_oid number;
