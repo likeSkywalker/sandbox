@@ -1,4 +1,6 @@
 *.lnk
+*.sql~
+
 
 # Compiled class file
 *.class
