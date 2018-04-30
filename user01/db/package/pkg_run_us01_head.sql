@@ -1,3 +1,5 @@
+PROMPT ** Create package head PKG_RUN_US01 **
+
 create or replace PACKAGE PKG_RUN_US01 AS 
 
   /* TODO enter package declarations (types, exceptions, methods etc) here */ 
