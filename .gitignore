@@ -1,5 +1,6 @@
 *.lnk
 *.sql~
+target/
 
 
 # Compiled class file

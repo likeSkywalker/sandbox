@@ -5,3 +5,5 @@
 @./procedure/insert_result_us01.sql
 @./package/pkg_run_us01_head.sql
 @./package/pkg_run_us01_body.sql
+
+exit
