@@ -1,3 +1,5 @@
+PROMPT ** Create package body PKG_RUN_US01 **
+
 create or replace PACKAGE BODY PKG_RUN_US01 AS
 
   procedure p_insert_result (ip_count in number) AS
