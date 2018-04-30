@@ -10,6 +10,12 @@ begin
         null;
       end;
     end loop;
+	begin
+	  execute immediate 'PURGE RECYCLEBIN';
+	exception
+        when others then
+        null;
+    end;  
 end;
 /
 
