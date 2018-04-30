@@ -2,7 +2,8 @@ PROMPT ** Create package head PKG_RUN_US01 **
 
 create or replace PACKAGE PKG_RUN_US01 AS 
 
-  /* TODO enter package declarations (types, exceptions, methods etc) here */ 
+  /* This comment should be added before merge to env/int01 */ 
+  
   procedure p_insert_result (ip_count in number);
   
   procedure p_clean_result;
