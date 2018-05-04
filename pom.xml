@@ -3,54 +3,18 @@
         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>sandbox</groupId>
-  <artifactId>test-database</artifactId>
+  <artifactId>sandbox</artifactId>
   <version>1.0-SNAPSHOT</version>
-  <packaging>jar</packaging>
+  <packaging>pom</packaging>
   <name>Sandbox</name>
   
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
   
-  <build>
-	<plugins>
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>exec-maven-plugin</artifactId>
-        <version>1.5.0</version>
-        <executions>
-          <execution>
-		    <id>clean-database</id>
-            <phase>clean</phase>
-            <goals>
-              <goal>exec</goal>
-            </goals>
-            <configuration>
-              <executable>sqlplus</executable>
-              <arguments>
-                <argument>user01/user01@localhost:1521/orcl</argument>
-                <argument>@clean_all.sql</argument>
-              </arguments>
-              <workingDirectory>./user01/db/</workingDirectory>
-            </configuration>
-          </execution>
-		  <execution>
-            <id>install-database</id>
-			<phase>test</phase>
-            <goals>
-              <goal>exec</goal>
-            </goals>
-            <configuration>
-              <executable>sqlplus</executable>
-              <arguments>
-                <argument>user01/user01@localhost:1521/orcl</argument>
-                <argument>@build_all.sql</argument>
-              </arguments>
-              <workingDirectory>./user01/db/</workingDirectory>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
-    </plugins>
-  </build>
+  <modules>
+	<module>user01</module>
+	<module>user02</module>
+  </modules>
+
 </project>
