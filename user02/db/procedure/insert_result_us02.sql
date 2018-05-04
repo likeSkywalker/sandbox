@@ -15,7 +15,7 @@ BEGIN
            then exit;
          end if;
        end loop;
-       v_oid := SEQ_OID_US01.nextval;
+       v_oid := SEQ_OID_US02.nextval;
        insert into STG_GAME_RESULT_US02 (STG_ID , EXTERNAL_GAME_ID , GAME_DATE , TEAM1_NAME , TEAM1_SCORE , TEAM2_NAME , TEAM2_SCORE )
        values (v_oid, 'L01-G'||to_char(v_oid,'0000'), trunc(sysdate),v_team1_name,trunc(DBMS_RANDOM.VALUE(0,5)),v_team2_name,trunc(DBMS_RANDOM.VALUE(0,5)));
     end loop;
