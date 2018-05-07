@@ -1,5 +1,5 @@
 # Lets UserFromTheDarkSide would be code-owner for procedures
 
-user01/db/procedure/*.sql UserFromTheDarkSide
-user02/db/procedure/*.sql UserFromTheDarkSide
-user03/db/procedure/*.sql UserFromTheDarkSide
+user01/db/procedure/*.sql @UserFromTheDarkSide
+user02/db/procedure/*.sql @UserFromTheDarkSide
+user03/db/procedure/*.sql @UserFromTheDarkSide
