@@ -11,7 +11,7 @@ BEGIN
        v_team1_name := GET_TEAM_US01();
        loop
          v_team2_name := GET_TEAM_US01();
-         if v_team1_name != v_team2_name
+         if v_team1_name != v_team2_name_fail
            then exit;
          end if;
        end loop;
