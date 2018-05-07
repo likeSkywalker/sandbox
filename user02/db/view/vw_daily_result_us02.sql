@@ -1,3 +1,5 @@
+@&print -c 'Create view VW_DAILY_RESULT_US02'
+
 CREATE VIEW VW_DAILY_RESULT_US02 AS 
 select t1.PART_ID
       ,t1.STG_ID

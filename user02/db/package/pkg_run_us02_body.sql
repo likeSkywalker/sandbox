@@ -1,4 +1,4 @@
-PROMPT ** Create package body PKG_RUN_US02 **
+@&print -c 'Create package body PKG_RUN_US02'
 
 create or replace PACKAGE BODY PKG_RUN_US02 AS
 
