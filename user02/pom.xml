@@ -36,7 +36,7 @@
           </execution>
 		  <execution>
             <id>install-database</id>
-			<phase>test</phase>
+			<phase>compile</phase>
             <goals>
               <goal>exec</goal>
             </goals>

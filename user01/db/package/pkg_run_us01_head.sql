@@ -1,4 +1,4 @@
-PROMPT ** Create package head PKG_RUN_US01 **
+@&print -c 'Create package head PKG_RUN_US01'
 
 create or replace PACKAGE PKG_RUN_US01 AS 
 

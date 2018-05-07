@@ -1,4 +1,4 @@
-PROMPT ** Create procedure INSERT_RESULT_US02 **
+@&print -c 'Create procedure INSERT_RESULT_US02'
 
 create or replace PROCEDURE INSERT_RESULT_US02 (ip_count in number) AS 
   pragma autonomous_transaction;

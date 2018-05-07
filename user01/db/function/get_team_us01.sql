@@ -1,4 +1,5 @@
-PROMPT ** Create function GET_TEAM_US01 **
+@&print -c 'Create function GET_TEAM_US01'
+
 
 create or replace FUNCTION GET_TEAM_US01 RETURN VARCHAR2 AS 
   v_random number;
