@@ -3,7 +3,7 @@
 create or replace PACKAGE PKG_RUN_US01 AS 
 
   /* This comment should be added before merge to env/int01
-    Version 1.22  */ 
+    Version 1.23  */ 
   
   procedure p_insert_result (ip_count in number);
   
