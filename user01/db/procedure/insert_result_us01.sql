@@ -1,7 +1,7 @@
 @&print -c 'Create procedure INSERT_RESULT_US01'
 
 /* Check codeowners feature
- * Version v03
+ * Version v04
  */
 create or replace PROCEDURE INSERT_RESULT_US01 (ip_count in number) AS 
   pragma autonomous_transaction;
