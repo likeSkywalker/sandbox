@@ -1,6 +1,6 @@
 @&print -c 'Create function GET_TEAM_US02'
 
--- comment v06
+-- comment v07
 
 create or replace FUNCTION GET_TEAM_US02 RETURN VARCHAR2 AS 
   v_random number;
