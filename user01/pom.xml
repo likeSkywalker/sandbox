@@ -75,27 +75,27 @@
 				</reporter>
 				<reporter>
 					<name>UT_COVERAGE_SONAR_REPORTER</name>
-					<fileOutput>report/coverage-sonar-reporter.xml</fileOutput>
+					<fileOutput>user01/report/coverage-sonar-reporter.xml</fileOutput>
 					<consoleOutput>false</consoleOutput>
 				</reporter>
 				<reporter>
 					<name>UT_XUNIT_REPORTER</name>
-					<fileOutput>report/UT_XUNIT_REPORTER.xml</fileOutput>
+					<fileOutput>user01/report/UT_XUNIT_REPORTER.xml</fileOutput>
 					<consoleOutput>false</consoleOutput>
 				</reporter>
 				<reporter>
 					<name>UT_COVERAGE_HTML_REPORTER</name>
-					<fileOutput>report/UT_COVERAGE_HTML_REPORTER.html</fileOutput>
+					<fileOutput>user01/report/UT_COVERAGE_HTML_REPORTER.html</fileOutput>
 					<consoleOutput>false</consoleOutput>
 				</reporter>
 				<reporter>
 					<name>UT_SONAR_TEST_REPORTER</name>
-					<fileOutput>report/sonar-test-reporter.xml</fileOutput>
+					<fileOutput>user01/report/sonar-test-reporter.xml</fileOutput>
 					<consoleOutput>false</consoleOutput>
 				</reporter>
 				<reporter>
 					<name>UT_TEAMCITY_REPORTER</name>
-					<fileOutput>report/teamcity-test-reporter.txt</fileOutput>
+					<fileOutput>user01/report/teamcity-test-reporter.txt</fileOutput>
 					<consoleOutput>false</consoleOutput>
 				</reporter>
 			</reporters>
@@ -104,7 +104,7 @@
 			</paths>
 			<sources>
 				<source>
-					<directory>db</directory>
+					<directory>user01/db</directory>
 					<includes>
 						<include>**/*.pck</include>
 						<include>**/*.sql</include>
@@ -113,7 +113,7 @@
 			</sources>
 			<tests>
 				<test>
-					<directory>test</directory>
+					<directory>user01/dbtest</directory>
 					<includes>
 						<!--include>procedure/UT$_GET_TEAM_USER01.pck</include-->
 						<include>**/UT$_*.pck</include>
