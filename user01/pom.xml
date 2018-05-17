@@ -113,7 +113,7 @@
 			</sources>
 			<tests>
 				<test>
-					<directory>user01/dbtest</directory>
+					<directory>user01/test</directory>
 					<includes>
 						<!--include>procedure/UT$_GET_TEAM_USER01.pck</include-->
 						<include>**/UT$_*.pck</include>
