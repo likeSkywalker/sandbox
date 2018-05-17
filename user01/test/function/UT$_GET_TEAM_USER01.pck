@@ -33,7 +33,7 @@ create or replace package body UT$_GET_TEAM_USER01 is
             from dual
             connect by level <=500) vw
       where team not in ('DINAMO','DNIPRO','SHAHTAR','METALIST','ZORYA','VORSKLA');
-     ut.expect(cur_generate_500_values).to_have_count(1);
+     ut.expect(cur_generate_500_values).to_have_count(0);
   end;
 
 end UT$_GET_TEAM_USER01;
