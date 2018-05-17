@@ -1,6 +1,8 @@
 *.lnk
 *.sql~
+*.~pck
 target/
+*/report/
 
 
 # Compiled class file
