@@ -28,7 +28,4 @@ exec dbms_utility.compile_schema(schema => '&SCHEMA_NAME');
 ------------------------------------------------------
 --  Checking Invalid objects and EXIT               --
 ------------------------------------------------------
-@../test/function/UT$_GET_TEAM_USER01.pck
-@../test/function/UT$_GET_TEAM_US01.pck
-
 @./checks/invalid_objects.sql

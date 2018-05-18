@@ -2,14 +2,14 @@ create or replace package UT$_GET_TEAM_US01 is
 
   -- %suite
   -- %suitepath(user01.function)
-  -- %displayname(GET_TEAM_US01)
+  -- %displayname(get_team_us01)
   
   -- %test
-  -- %displayname(1: verify output data length)
+  -- %displayname(check_data_length)
   procedure check_data_length;
   
   -- %test
-  -- %displayname(2: generate 500 values and check by list)
+  -- %displayname(check_values_by_list)
   procedure check_values_by_list;
   
   
