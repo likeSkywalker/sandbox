@@ -1,21 +1,21 @@
-create or replace package UT$_GET_TEAM_USER01 is
+create or replace package UT$_GET_TEAM_US01 is
 
   -- %suite
-  -- %suitepath(user01.procedure)
-  -- %displayname(GET_TEAM_USER01)
+  -- %suitepath(user01.function)
+  -- %displayname(GET_TEAM_US01)
   
   -- %test
-  -- %displayname(verify output data length)
+  -- %displayname(1: verify output data length)
   procedure check_data_length;
   
   -- %test
-  -- %displayname(generate 500 values and check by list)
+  -- %displayname(2: generate 500 values and check by list)
   procedure check_values_by_list;
   
   
-end UT$_GET_TEAM_USER01;
+end UT$_GET_TEAM_US01;
 /
-create or replace package body UT$_GET_TEAM_USER01 is
+create or replace package body UT$_GET_TEAM_US01 is
 
   procedure check_data_length is
   begin
@@ -35,5 +35,5 @@ create or replace package body UT$_GET_TEAM_USER01 is
      ut.expect(cur_generate_500_values).to_have_count(0);
   end;
 
-end UT$_GET_TEAM_USER01;
+end UT$_GET_TEAM_US01;
 /
