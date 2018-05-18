@@ -96,7 +96,7 @@
 				<reporter>
 					<name>UT_TEAMCITY_REPORTER</name>
 					<fileOutput>user01/report/teamcity-test-reporter.txt</fileOutput>
-					<consoleOutput>false</consoleOutput>
+					<consoleOutput>true</consoleOutput>
 				</reporter>
 			</reporters>
 			<paths>
