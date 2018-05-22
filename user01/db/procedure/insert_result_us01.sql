@@ -3,13 +3,15 @@
 /* Check codeowners feature
  * Version v07
  */
-create or replace PROCEDURE INSERT_RESULT_US01 (ip_count in number) AS 
+CREATE OR REPLACE PROCEDURE INSERT_RESULT_US01 (ip_count in number) AS
   pragma autonomous_transaction;
   v_oid number;
   v_team1_name varchar2(256);
   v_team2_name varchar2(256);
+  v_cnt number;
 BEGIN
-  for i in 1..ip_count
+  v_cnt := nvl(ip_count,0);
+  for i in 1..v_cnt
     loop
        v_team1_name := GET_TEAM_US01();
        loop
