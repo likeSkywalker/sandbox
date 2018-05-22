@@ -5,7 +5,6 @@ create or replace package UT$_PKG_RUN_US01 is
   -- %displayname(pkg_run_us01)
   -- %rollback(manual)
 
-  --%context(p_insert_result)
 
   -- %test
   -- %displayname("put 'n' as input parameter and check count")
@@ -17,7 +16,6 @@ create or replace package UT$_PKG_RUN_US01 is
   -- %rollback(manual)
   procedure null_value;
 
-  --%endcontext
 
   --%context(p_clean_result)
 
@@ -26,8 +24,6 @@ create or replace package UT$_PKG_RUN_US01 is
   -- %!aftertest(n_record)
   -- %rollback(manual)
   procedure clean_n_record;
-
-  --%endcontext
 
 
 end UT$_PKG_RUN_US01;

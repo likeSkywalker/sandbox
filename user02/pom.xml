@@ -2,14 +2,20 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>sandbox.user02</groupId>
-  <artifactId>user02</artifactId>
+  <groupId>sandbox.user01</groupId>
+  <artifactId>user01</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>jar</packaging>
-  <name>user02</name>
+  <name>user01</name>
   
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	<db.user>${user02.user}</db.user>
+	<db.pass>${user02.pass}</db.pass>
+	<db.host>${user02.host}</db.host>
+	<db.port>${user02.port}</db.port>
+	<db.sid>${user02.sid}</db.sid>
+	<db.service>${user02.service}</db.service>
   </properties>
   
   <build>
@@ -28,7 +34,7 @@
             <configuration>
               <executable>sqlplus</executable>
               <arguments>
-                <argument>user02/user02@localhost:1521/orcl</argument>
+                <argument>${db.user}/${db.pass}@${db.host}:${db.port}/${db.service}</argument>
                 <argument>@clean_all.sql</argument>
               </arguments>
               <workingDirectory>./db/</workingDirectory>
@@ -43,13 +49,53 @@
             <configuration>
               <executable>sqlplus</executable>
               <arguments>
-                <argument>user02/user02@localhost:1521/orcl</argument>
+                <argument>${db.user}/${db.pass}@${db.host}:${db.port}/${db.service}</argument>
                 <argument>@build_all.sql</argument>
               </arguments>
               <workingDirectory>./db/</workingDirectory>
             </configuration>
           </execution>
+		  <execution>
+            <id>install-testpack</id>
+			<phase>test-compile</phase>
+            <goals>
+              <goal>exec</goal>
+            </goals>
+            <configuration>
+              <executable>sqlplus</executable>
+              <arguments>
+                <argument>${db.user}/${db.pass}@${db.host}:${db.port}/${db.service}</argument>
+                <argument>@build_test.sql</argument>
+              </arguments>
+              <workingDirectory>./test/</workingDirectory>
+            </configuration>
+          </execution>
         </executions>
+      </plugin>
+	  
+	  <plugin>
+		<!--> Plagin is taken from local repository <-->
+		<groupId>org.ci.build</groupId>
+		<artifactId>utplsql-executor</artifactId>
+		<version>1.01</version>
+		<executions>
+		<execution>
+            <id>test-database</id>
+			<phase>test</phase>
+		<goals>
+            <goal>test</goal>
+        </goals>
+        <configuration>
+			<jdbcUrl>jdbc:oracle:thin:@${db.host}:${db.port}:${db.sid}</jdbcUrl>
+			<user>${db.user}</user>
+			<password>${db.pass}</password>
+			<failOnErrors>true</failOnErrors>
+			<paths>
+				<path>${db.user}</path>
+			</paths>       
+        </configuration>
+		</execution>
+		</executions>
       </plugin>
     </plugins>
   </build>
