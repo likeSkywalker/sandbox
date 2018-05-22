@@ -6,17 +6,17 @@ create or replace package UT$_PKG_RUN_US01 is
   -- %rollback(manual)
 
   -- %test
-  -- %displayname(p_insert_result:n_record)
+  -- %displayname(p_insert_result: n_record)
   -- %rollback(manual)
   procedure n_record;
 
   -- %test
-  -- %displayname(p_insert_result:null_value)
+  -- %displayname(p_insert_result@null_value)
   -- %rollback(manual)
   procedure null_value;
 
   -- %test
-  -- %displayname(p_clean_result:clean_n_record)
+  -- %displayname(p_clean_result@clean_n_record)
   -- %aftertest(n_record)
   -- %rollback(manual)
   procedure clean_n_record;

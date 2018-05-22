@@ -74,6 +74,7 @@
       </plugin>
 	  
 	  <plugin>
+		<!--> Plagin is taken from local repository <-->
 		<groupId>org.ci.build</groupId>
 		<artifactId>utplsql-executor</artifactId>
 		<version>1.01</version>
