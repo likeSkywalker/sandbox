@@ -3,16 +3,16 @@ create or replace package UT$_GET_TEAM_US01 is
   -- %suite
   -- %suitepath(user01.function)
   -- %displayname(get_team_us01)
-  
+
   -- %test
-  -- %displayname(check_data_length)
+  -- %displayname(check_data_length: "validate length of output varchar")
   procedure check_data_length;
-  
+
   -- %test
-  -- %displayname(check_values_by_list)
+  -- %displayname(check_values_by_list: "generate 500 values and validate by list")
   procedure check_values_by_list;
-  
-  
+
+
 end UT$_GET_TEAM_US01;
 /
 create or replace package body UT$_GET_TEAM_US01 is
@@ -21,13 +21,13 @@ create or replace package body UT$_GET_TEAM_US01 is
   begin
    ut.expect(length(get_team_us01())).to_(be_less_or_equal(256));
   end;
-  
+
   procedure check_values_by_list is
     cur_generate_500_values sys_refcursor;
   begin
      insert_result_us01(1);
      open cur_generate_500_values for
-     select * 
+     select *
       from (select level as lvl, get_team_us01 as team
             from dual
             connect by level <=500) vw
