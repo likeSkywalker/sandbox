@@ -1,7 +1,7 @@
 create or replace package UT$_PKG_RUN_US02 is
 
   -- %suite
-  -- %suitepath(user01.package)
+  -- %suitepath(user02.package)
   -- %displayname(pkg_run_us02)
   -- %rollback(manual)
 

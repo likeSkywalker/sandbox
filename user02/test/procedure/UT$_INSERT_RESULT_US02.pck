@@ -1,7 +1,7 @@
 create or replace package UT$_INSERT_RESULT_US02 is
 
   -- %suite
-  -- %suitepath(user01.procedure)
+  -- %suitepath(user02.procedure)
   -- %displayname(insert_result_us02)
   -- %rollback(manual)
 
