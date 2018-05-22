@@ -5,11 +5,11 @@ create or replace package UT$_GET_TEAM_US01 is
   -- %displayname(get_team_us01)
 
   -- %test
-  -- %displayname(check_data_length: "validate length of output varchar")
+  -- %displayname("validate length of output varchar")
   procedure check_data_length;
 
   -- %test
-  -- %displayname(check_values_by_list: "generate 500 values and validate by list")
+  -- %displayname("generate 500 values and validate by list")
   procedure check_values_by_list;
 
 
