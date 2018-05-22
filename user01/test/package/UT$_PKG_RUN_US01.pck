@@ -5,18 +5,18 @@ create or replace package UT$_PKG_RUN_US01 is
   -- %displayname(pkg_run_us01)
   -- %rollback(manual)
 
-  -- %test
-  -- %displayname(p_insert_result: n_record)
+  -- %test(insert n records into table)
+  -- %displayname(p_insert_result:=>"insert n records")
   -- %rollback(manual)
   procedure n_record;
 
   -- %test
-  -- %displayname(p_insert_result@null_value)
+  -- %displayname(p_insert_result.null_value)
   -- %rollback(manual)
   procedure null_value;
 
   -- %test
-  -- %displayname(p_clean_result@clean_n_record)
+  -- %displayname(pkg_run_us01.p_clean_result=>clean_n_record)
   -- %aftertest(n_record)
   -- %rollback(manual)
   procedure clean_n_record;

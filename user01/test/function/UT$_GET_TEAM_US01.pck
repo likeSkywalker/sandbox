@@ -5,11 +5,11 @@ create or replace package UT$_GET_TEAM_US01 is
   -- %displayname(get_team_us01)
 
   -- %test
-  -- %displayname(check_data_length)
+  -- %displayname(get_team_us01."check data length")
   procedure check_data_length;
 
   -- %test
-  -- %displayname(check_values_by_list)
+  -- %displayname(function.get_team_us01:=>check_values)
   procedure check_values_by_list;
 
 
