@@ -1,17 +1,17 @@
 create or replace package UT$_INSERT_RESULT_US01 is
 
   -- %suite
-  -- %!suitepath(user01.procedure)
+  -- %suitepath(user01.procedure)
   -- %displayname(insert_result_us01)
   -- %rollback(manual)
 
   -- %test
-  -- %displayname(insert_result_us01.n_record)
+  -- %displayname(n_record: "put 'n' as input parameter and check count")
   -- %rollback(manual)
   procedure n_record;
 
   -- %test
-  -- %displayname(null values validation)
+  -- %displayname(null_value: "put 'null' as input parameter and check count")
   -- %rollback(manual)
   procedure null_value;
 
