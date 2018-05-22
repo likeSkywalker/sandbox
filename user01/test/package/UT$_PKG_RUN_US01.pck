@@ -17,8 +17,6 @@ create or replace package UT$_PKG_RUN_US01 is
   procedure null_value;
 
 
-  --%context(p_clean_result)
-
   -- %test
   -- %displayname("insert 'n' records, clean and check count")
   -- %!aftertest(n_record)

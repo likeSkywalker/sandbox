@@ -9,8 +9,9 @@ create or replace PROCEDURE INSERT_RESULT_US02 (ip_count in number) AS
   v_oid number;
   v_team1_name varchar2(256);
   v_team2_name varchar2(256);
+  v_count number := nvl(ip_count,0);
 BEGIN
-  for i in 1..ip_count
+  for i in 1..v_count
     loop
        v_team1_name := GET_TEAM_US02();
        loop
