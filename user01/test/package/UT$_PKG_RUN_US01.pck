@@ -6,15 +6,18 @@ create or replace package UT$_PKG_RUN_US01 is
   
   -- %test
   -- %displayname(p_insert_result.n_record)
+  -- %rollback(manual)
   procedure n_record;
   
   -- %test
   -- %displayname(p_insert_result.null_value)
+  -- %rollback(manual)
   procedure null_value;
   
   -- %test
   -- %displayname(p_clean_result.clean_n_record)
-  -- %aftertest(p_insert_result.n_record)
+  -- %aftertest(n_record)
+  -- %rollback(manual)
   procedure clean_n_record;
   
 
@@ -35,7 +38,7 @@ create or replace package body UT$_PKG_RUN_US01 is
     -- insert n records:
     pkg_run_us01.p_insert_result(n);
     -- fetch n records and verify:
-    open cur_stg_game_result_us01 for select count(1) from stg_game_result_us01;
+    open cur_stg_game_result_us01 for select * from stg_game_result_us01;
     ut.expect(cur_stg_game_result_us01).to_have_count(n);
   end n_record;
   
@@ -51,7 +54,7 @@ create or replace package body UT$_PKG_RUN_US01 is
     -- pass null as ip_count parameter:
     pkg_run_us01.p_insert_result(null);
     -- fetch and verify:
-    open cur_stg_game_result_us01 for select count(1) from stg_game_result_us01;
+    open cur_stg_game_result_us01 for select * from stg_game_result_us01;
     ut.expect(cur_stg_game_result_us01).to_have_count(0);
   end null_value;
   
@@ -63,7 +66,7 @@ create or replace package body UT$_PKG_RUN_US01 is
     -- run clean:
     pkg_run_us01.p_clean_result();
     -- fetch and verify:
-    open cur_stg_game_result_us01 for select count(1) from stg_game_result_us01;
+    open cur_stg_game_result_us01 for select * from stg_game_result_us01;
     ut.expect(cur_stg_game_result_us01).to_have_count(0);
   end clean_n_record;
   

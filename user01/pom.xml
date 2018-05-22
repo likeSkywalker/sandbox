@@ -49,13 +49,28 @@
               <workingDirectory>./db/</workingDirectory>
             </configuration>
           </execution>
+		  <execution>
+            <id>install-testpack</id>
+			<phase>test-compile</phase>
+            <goals>
+              <goal>exec</goal>
+            </goals>
+            <configuration>
+              <executable>sqlplus</executable>
+              <arguments>
+                <argument>user01/user01@localhost:1521/orcl</argument>
+                <argument>@build_test.sql</argument>
+              </arguments>
+              <workingDirectory>./test/</workingDirectory>
+            </configuration>
+          </execution>
         </executions>
       </plugin>
 	  
 	  <plugin>
-		<groupId>org.utplsql</groupId>
-		<artifactId>utplsql-maven-plugin</artifactId>
-		<version>3.1.0-SNAPSHOT</version>
+		<groupId>org.ci.build</groupId>
+		<artifactId>utplsql-executor</artifactId>
+		<version>1.01</version>
 		<executions>
 		<execution>
             <id>test-database</id>
@@ -64,62 +79,13 @@
             <goal>test</goal>
         </goals>
         <configuration>
-			<url>jdbc:oracle:thin:@localhost:1521:orcl</url>
+			<jdbcUrl>jdbc:oracle:thin:@localhost:1521:orcl</jdbcUrl>
 			<user>user01</user>
 			<password>user01</password>
 			<failOnErrors>false</failOnErrors>
-			<reporters>
-				<reporter>
-					<name>UT_DOCUMENTATION_REPORTER</name>
-					<consoleOutput>true</consoleOutput>
-				</reporter>
-				<reporter>
-					<name>UT_COVERAGE_SONAR_REPORTER</name>
-					<fileOutput>user01/report/coverage-sonar-reporter.xml</fileOutput>
-					<consoleOutput>false</consoleOutput>
-				</reporter>
-				<reporter>
-					<name>UT_XUNIT_REPORTER</name>
-					<fileOutput>user01/report/UT_XUNIT_REPORTER.xml</fileOutput>
-					<consoleOutput>false</consoleOutput>
-				</reporter>
-				<reporter>
-					<name>UT_COVERAGE_HTML_REPORTER</name>
-					<fileOutput>user01/report/UT_COVERAGE_HTML_REPORTER.html</fileOutput>
-					<consoleOutput>false</consoleOutput>
-				</reporter>
-				<reporter>
-					<name>UT_SONAR_TEST_REPORTER</name>
-					<fileOutput>user01/report/sonar-test-reporter.xml</fileOutput>
-					<consoleOutput>false</consoleOutput>
-				</reporter>
-				<reporter>
-					<name>UT_TEAMCITY_REPORTER</name>
-					<fileOutput>user01/report/teamcity-test-reporter.txt</fileOutput>
-					<consoleOutput>true</consoleOutput>
-				</reporter>
-			</reporters>
 			<paths>
 				<path>user01</path>
-			</paths>
-			<sources>
-				<source>
-					<directory>user01/db</directory>
-					<includes>
-						<include>**/*.pck</include>
-						<include>**/*.sql</include>
-					</includes>
-				</source>
-			</sources>
-			<tests>
-				<test>
-					<directory>user01/test</directory>
-					<includes>
-						<!--include>procedure/UT$_GET_TEAM_USER01.pck</include-->
-						<include>**/UT$_*.pck</include>
-					</includes>
-				</test>
-			</tests>                  
+			</paths>       
         </configuration>
 		</execution>
 		</executions>

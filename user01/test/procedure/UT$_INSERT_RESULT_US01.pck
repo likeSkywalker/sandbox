@@ -6,10 +6,12 @@ create or replace package UT$_INSERT_RESULT_US01 is
   
   -- %test
   -- %displayname(n_record)
+  -- %rollback(manual)
   procedure n_record;
   
   -- %test
   -- %displayname(null_value)
+  -- %rollback(manual)
   procedure null_value;
 
 end UT$_INSERT_RESULT_US01;
@@ -29,7 +31,7 @@ create or replace package body UT$_INSERT_RESULT_US01 is
     -- insert n records:
     insert_result_us01(n);
     -- fetch n records and verify:
-    open cur_stg_game_result_us01 for select count(1) from stg_game_result_us01;
+    open cur_stg_game_result_us01 for select * from stg_game_result_us01;
     ut.expect(cur_stg_game_result_us01).to_have_count(n);
   end n_record;
   
@@ -45,7 +47,7 @@ create or replace package body UT$_INSERT_RESULT_US01 is
     -- pass null as ip_count parameter:
    insert_result_us01(null);
     -- fetch and verify:
-    open cur_stg_game_result_us01 for select count(1) from stg_game_result_us01;
+    open cur_stg_game_result_us01 for select * from stg_game_result_us01;
     ut.expect(cur_stg_game_result_us01).to_have_count(0);
   end null_value;
   
