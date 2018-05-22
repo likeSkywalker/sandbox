@@ -1,8 +1,8 @@
 create or replace package UT$_GET_TEAM_US01 is
 
   -- %suite
-  -- %suitepath(user01)
-  -- %displayname(function.get_team_us01)
+  -- %suitepath(user01.function)
+  -- %displayname(get_team_us01)
 
   -- %test
   -- %displayname(get_team_us01.check_data_length)

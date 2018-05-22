@@ -1,8 +1,8 @@
 create or replace package UT$_INSERT_RESULT_US01 is
 
   -- %suite
-  -- %suitepath(user01)
-  -- %displayname(procedure.insert_result_us01)
+  -- %suitepath(user01.procedure)
+  -- %displayname(insert_result_us01)
   -- %rollback(manual)
 
   -- %test
