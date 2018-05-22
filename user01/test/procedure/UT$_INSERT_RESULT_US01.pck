@@ -6,12 +6,12 @@ create or replace package UT$_INSERT_RESULT_US01 is
   -- %rollback(manual)
 
   -- %test
-  -- %displayname(n_record: "put 'n' as input parameter and check count")
+  -- %displayname("put 'n' as input parameter and check count")
   -- %rollback(manual)
   procedure n_record;
 
   -- %test
-  -- %displayname(null_value: "put 'null' as input parameter and check count")
+  -- %displayname("put 'null' as input parameter and check count")
   -- %rollback(manual)
   procedure null_value;
 
