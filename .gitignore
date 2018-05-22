@@ -3,6 +3,7 @@
 *.~pck
 target/
 */report/
+*/reports/
 
 
 # Compiled class file
