@@ -11,7 +11,7 @@ BEGIN
            when v_random = 1 then 'DNIPRO'
            when v_random = 2 then 'SHAHTAR'
            when v_random = 3 then 'METALIST'
-           when v_random = 4 then 'ZORYA'
+           when v_random = 4 then 'ZORYA-A'
            else 'VORSKLA'
          end;
 END GET_TEAM_US01;
