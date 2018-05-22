@@ -1,21 +1,21 @@
 create or replace package UT$_PKG_RUN_US01 is
 
   -- %suite
-  -- %suitepath(user01.package)
+  --! %suitepath(user01.package)
   -- %displayname(pkg_run_us01)
   
   -- %test
-  -- %displayname(p_insert_result.n_record)
+  -- %displayname(pkg_run_us01.p_insert_result.n_record)
   -- %rollback(manual)
   procedure n_record;
   
   -- %test
-  -- %displayname(p_insert_result.null_value)
+  -- %displayname(pkg_run_us01.p_insert_result.null_value)
   -- %rollback(manual)
   procedure null_value;
   
   -- %test
-  -- %displayname(p_clean_result.clean_n_record)
+  -- %displayname(pkg_run_us01.p_clean_result.clean_n_record)
   -- %aftertest(n_record)
   -- %rollback(manual)
   procedure clean_n_record;

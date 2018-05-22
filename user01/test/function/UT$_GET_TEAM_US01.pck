@@ -1,7 +1,7 @@
 create or replace package UT$_GET_TEAM_US01 is
 
   -- %suite
-  -- %suitepath(user01.function)
+  --! %suitepath(user01.function)
   -- %displayname(get_team_us01)
   
   -- %test
