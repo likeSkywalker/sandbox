@@ -2,6 +2,13 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
+  
+  <parent>
+        <artifactId>sandbox</artifactId>
+        <groupId>sandbox</groupId>
+        <version>1.0.0</version>
+  </parent>
+  
   <groupId>sandbox.user01</groupId>
   <artifactId>user01</artifactId>
   <version>1.0.0</version>
@@ -17,6 +24,14 @@
 	<db.sid>${user01.sid}</db.sid>
 	<db.service>${user01.service}</db.service>
   </properties>
+  
+  <dependencies>
+	<dependency>
+		<groupId>sandbox.user02</groupId>
+		<artifactId>user02</artifactId>
+		<version>1.0.0</version>
+	</dependency>
+  </dependencies>
   
   <build>
 	<plugins>
@@ -98,5 +113,7 @@
 		</executions>
       </plugin>
     </plugins>
+	
   </build>
+  
 </project>
