@@ -1,7 +1,7 @@
 @&print -c 'Create procedure INSERT_RESULT_US02'
 
 /* Check codeowners feature
- * Version v07
+ * Version v08
  */
 
 create or replace PROCEDURE INSERT_RESULT_US02 (ip_count in number) AS 
